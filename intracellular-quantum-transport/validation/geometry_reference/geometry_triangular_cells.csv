@@ -1,0 +1,9 @@
+﻿anchor_sector,upper_cone,lower_cone,target_cone,target_predecessor_sectors,sweep_arm,is_antipodal_meeting,execution_order
+1,L2-C001,L3-C008,L1-C001,,start,0,1->2->3
+2,L2-C002,L3-C001,L1-C002,1,clockwise,0,4->5->6
+3,L2-C003,L3-C002,L1-C003,2,clockwise,0,7->8->9
+4,L2-C004,L3-C003,L1-C004,3,clockwise,0,10->11->12
+5,L2-C005,L3-C004,L1-C005,4;6,meeting,1,22->23->24
+6,L2-C006,L3-C005,L1-C006,7,counterclockwise,0,19->20->21
+7,L2-C007,L3-C006,L1-C007,8,counterclockwise,0,16->17->18
+8,L2-C008,L3-C007,L1-C008,1,counterclockwise,0,13->14->15
