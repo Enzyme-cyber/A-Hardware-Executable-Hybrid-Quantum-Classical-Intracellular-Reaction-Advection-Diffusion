@@ -1,0 +1,293 @@
+{
+  "model": {
+    "nz": 6,
+    "nr": 4,
+    "nphi": 12,
+    "azimuth_counts_by_ring": [
+      1,
+      4,
+      8,
+      12
+    ],
+    "radius_nucleus": 0.35,
+    "radius_membrane": 0.7,
+    "diffusion_free": 0.045,
+    "mobile_diffusion_fraction": 0.12,
+    "decay_free": 0.06,
+    "decay_stationary": 0.015,
+    "decay_mobile": 0.025,
+    "nuclear_permeability_free": 0.18,
+    "nuclear_permeability_mobile": 0.1,
+    "binding_total": 0.8,
+    "mobile_binding_fraction": 0.35,
+    "kon_stationary": 0.9,
+    "koff_stationary": 0.24,
+    "kon_mobile": 0.7,
+    "koff_mobile": 0.18,
+    "motor_speed": 0.55,
+    "circulation_speed": 0.22,
+    "circulation_swirl_speed": 0.08,
+    "side_exchange_rate": 0.24,
+    "side_background_base": 0.0,
+    "side_background_peak": 0.0,
+    "side_input_center_z": 0.68,
+    "side_input_sigma_z": 0.2,
+    "side_input_axisymmetric": false,
+    "side_input_center_phi_deg": 35.0,
+    "side_input_sigma_phi_deg": 50.0,
+    "initial_free_amplitude": 0.65,
+    "initial_stationary_occupancy": 0.05,
+    "initial_mobile_occupancy": 0.1,
+    "initial_center_z": 0.92,
+    "initial_sigma_z": 0.08,
+    "initial_center_rho": 0.3,
+    "initial_sigma_rho": 0.15,
+    "initial_axisymmetric": false,
+    "initial_center_phi_deg": 0.0,
+    "initial_sigma_phi_deg": 25.0,
+    "final_time": 0.08,
+    "organelle_density_value": 0.85,
+    "organelle_diffusion_resistance": 8.0,
+    "organelle_velocity_resistance": 5.0,
+    "organelle_edge_smoothing": 0.06,
+    "organelles": [
+      {
+        "id": "ORG-001",
+        "axes": [
+          0.24,
+          0.11,
+          0.08
+        ],
+        "center_cyl": [
+          0.3,
+          0.1,
+          25.0
+        ],
+        "orientation_deg": [
+          25.0,
+          30.0,
+          0.0
+        ]
+      },
+      {
+        "id": "ORG-002",
+        "axes": [
+          0.2,
+          0.09,
+          0.07
+        ],
+        "center_cyl": [
+          0.48,
+          0.2,
+          145.0
+        ],
+        "orientation_deg": [
+          145.0,
+          -35.0,
+          15.0
+        ]
+      },
+      {
+        "id": "ORG-003",
+        "axes": [
+          0.22,
+          0.1,
+          0.08
+        ],
+        "center_cyl": [
+          0.66,
+          0.3,
+          255.0
+        ],
+        "orientation_deg": [
+          255.0,
+          70.0,
+          0.0
+        ]
+      },
+      {
+        "id": "ORG-004",
+        "axes": [
+          0.16,
+          0.08,
+          0.06
+        ],
+        "center_cyl": [
+          0.78,
+          0.18,
+          330.0
+        ],
+        "orientation_deg": [
+          330.0,
+          10.0,
+          20.0
+        ]
+      }
+    ]
+  },
+  "hardware": {
+    "backend": "auto",
+    "shots": 500,
+    "batch_size": 1,
+    "parallel_jobs": 8,
+    "lchs_beta": 0.65,
+    "lchs_half_width": 5.0,
+    "lchs_nodes": 2,
+    "pauli_threshold": 1e-10,
+    "max_pauli_terms": 2,
+    "max_pauli_weight": 2,
+    "rotation_angle_threshold": 0.001,
+    "max_initial_components": 2,
+    "initial_component_threshold": 1e-08,
+    "trotter_order": 1,
+    "trotter_steps": 1,
+    "mapping": true,
+    "optimization": true,
+    "amend": false,
+    "run_preflight_bell": false,
+    "preflight_shots": 200,
+    "target_strategy": "highest_reference",
+    "output_dir": "overridden_per_cone"
+  },
+  "interfaces": {
+    "nuclear_enabled": true,
+    "nuclear_radial_order": 1,
+    "nuclear_fourier_modes": 1,
+    "nuclear_sample_count": 5,
+    "side_enabled": true,
+    "side_patch_count": 12,
+    "side_legendre_order": 1,
+    "side_samples_per_patch": 2,
+    "classical_species": [
+      "free",
+      "stationary",
+      "mobile"
+    ],
+    "export_neighbor_states": true,
+    "neighbor_transfer_species": [
+      "free",
+      "stationary",
+      "mobile"
+    ],
+    "neighbor_radial_depth": 0.22,
+    "neighbor_azimuth_sigma_deg": 35.0,
+    "handoff_scale": 1.0,
+    "prefer_qpu_coefficients": true,
+    "nuclear_qpu_species": [
+      "free",
+      "mobile"
+    ],
+    "side_qpu_species": [
+      "free"
+    ],
+    "side_initial_exclude_membrane_face": true,
+    "side_initial_radial_cutoff_sigma": 3.0
+  },
+  "qpu_dispatch": {
+    "mode": "qpu",
+    "python_executable": "python",
+    "quantum_runner": "originq_3d_hardware_runner.py",
+    "skip_preflight": true,
+    "parallel_jobs": 8,
+    "batch_size": 1,
+    "shots": 500,
+    "backend": "auto",
+    "max_targets_per_cone": 1,
+    "max_pauli_terms": 2,
+    "max_pauli_weight": 2,
+    "max_initial_components": 2
+  },
+  "surface_inputs": [
+    {
+      "input_id": "DRUG-ONE-SIDE-MEMBRANE",
+      "enabled": true,
+      "selector": {
+        "layers": [
+          1,
+          2,
+          3
+        ],
+        "angle_ranges_deg": [
+          [
+            0.0,
+            75.0
+          ]
+        ]
+      },
+      "surface": "cell_membrane",
+      "mode": "source",
+      "concentrations": {
+        "free": 0.5,
+        "stationary": 0.0,
+        "mobile": 0.0
+      },
+      "exchange_rate": 0.3,
+      "duration": 0.08,
+      "axisymmetric": true,
+      "center_rho": 0.5,
+      "sigma_rho": 100.0,
+      "center_phi_deg": 0.0,
+      "sigma_phi_deg": 360.0
+    }
+  ],
+  "geometry": {
+    "layers": 3,
+    "cell_circumference": 24.0,
+    "step_length": 3.0,
+    "coverage_fraction": 1.0,
+    "minimum_cones_per_layer": 3,
+    "layer_offsets_fraction": [
+      0.0,
+      0.3333333333333333,
+      0.6666666666666666
+    ],
+    "layer_polar_angles_deg": [
+      90.0,
+      70.0,
+      110.0
+    ],
+    "sphere_radius": null,
+    "start_angle_deg": 0.0,
+    "side_patch_count": 12,
+    "same_layer_weight": 1.0,
+    "cross_layer_weight": 0.55,
+    "schedule_mode": "bidirectional_half_ring",
+    "within_sector_order": [
+      "upper",
+      "lower",
+      "target"
+    ],
+    "require_even_cone_count": true,
+    "start_sector": 0
+  },
+  "schwarz": {
+    "time_start": 0.0,
+    "time_window": 0.08,
+    "time_slabs": 1,
+    "max_iterations": 2,
+    "minimum_iterations": 2,
+    "tolerance": 0.03,
+    "relaxation": 0.65,
+    "output_dir": "outputs/fig6/parameters_side"
+  },
+  "transfer": {
+    "efficiency": 0.28,
+    "free_fraction": 1.0,
+    "stationary_fraction": 0.0,
+    "mobile_fraction": 0.6,
+    "maximum_injected_concentration": 5.0,
+    "max_neighbors": 4
+  },
+  "initialisation": {
+    "root_cone_ids": [
+      "L1-C001"
+    ],
+    "root_base_initial_scale": 0.0,
+    "nonroot_base_initial_scale": 0.0,
+    "layer_scales": [
+      1.0,
+      0.85,
+      0.85
+    ]
+  }
+}

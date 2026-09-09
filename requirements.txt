@@ -1,0 +1,5 @@
+numpy>=1.24
+scipy>=1.10
+matplotlib>=3.7
+plotly>=5.18
+pyqpanda3>=0.4,<0.5

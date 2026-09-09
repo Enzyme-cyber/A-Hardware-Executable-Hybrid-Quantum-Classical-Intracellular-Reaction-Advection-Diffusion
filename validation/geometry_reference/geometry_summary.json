@@ -1,0 +1,103 @@
+{
+  "cone_count_per_layer": 8,
+  "total_cones": 24,
+  "sphere_radius": 3.819718634205488,
+  "angular_step_deg": 45.0,
+  "layer_offsets_fraction": [
+    0.0,
+    0.3333333333333333,
+    0.6666666666666666
+  ],
+  "layer_polar_angles_deg": [
+    90.0,
+    70.0,
+    110.0
+  ],
+  "side_patch_count": 12,
+  "link_count": 40,
+  "links_by_type": {
+    "same_layer": 24,
+    "target_upper": 8,
+    "target_lower": 8
+  },
+  "schedule_mode": "bidirectional_half_ring",
+  "within_sector_order": [
+    "upper",
+    "lower",
+    "target"
+  ],
+  "sector_sweep": [
+    {
+      "sector": 1,
+      "arm": "start",
+      "direction": 0,
+      "predecessors": [],
+      "meeting": false
+    },
+    {
+      "sector": 2,
+      "arm": "clockwise",
+      "direction": 1,
+      "predecessors": [
+        1
+      ],
+      "meeting": false
+    },
+    {
+      "sector": 3,
+      "arm": "clockwise",
+      "direction": 1,
+      "predecessors": [
+        2
+      ],
+      "meeting": false
+    },
+    {
+      "sector": 4,
+      "arm": "clockwise",
+      "direction": 1,
+      "predecessors": [
+        3
+      ],
+      "meeting": false
+    },
+    {
+      "sector": 8,
+      "arm": "counterclockwise",
+      "direction": -1,
+      "predecessors": [
+        1
+      ],
+      "meeting": false
+    },
+    {
+      "sector": 7,
+      "arm": "counterclockwise",
+      "direction": -1,
+      "predecessors": [
+        8
+      ],
+      "meeting": false
+    },
+    {
+      "sector": 6,
+      "arm": "counterclockwise",
+      "direction": -1,
+      "predecessors": [
+        7
+      ],
+      "meeting": false
+    },
+    {
+      "sector": 5,
+      "arm": "meeting",
+      "direction": 0,
+      "predecessors": [
+        4,
+        6
+      ],
+      "meeting": true
+    }
+  ],
+  "schedule": "start; clockwise half-arm; counterclockwise half-arm; antipodal meeting. Within each sector: upper -> lower -> target"
+}
